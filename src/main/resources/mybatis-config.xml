@@ -16,7 +16,7 @@
 	<!-- 别名定义 -->
 	
 	<typeAliases>
-		<package name="com.gion.cms.entity"/>
+		<package name="com.lim.cms.entity"/>
 	</typeAliases>
 
 
@@ -39,8 +39,28 @@
 	<!-- 映射文件，mapper的配置文件 -->
 	<mappers>
 		<!--直接映射到相应的mapper文件 -->
-		<mapper resource="sqlmapper/TUserMapper.xml" />
-		<mapper resource="sqlmapper/TUserTransactionMapper.xml" /> 
+		<mapper resource="sqlmapper/TCalendarMapper.xml" />
+		<mapper resource="sqlmapper/TCompanyMapper.xml" /> 
+		<mapper resource="sqlmapper/TCustomersMapper.xml" />
+		<mapper resource="sqlmapper/TDateFormatMapper.xml" /> 
+		<mapper resource="sqlmapper/TGroupsMapper.xml" />
+		<mapper resource="sqlmapper/TLoginAttemptsMapper.xml" /> 
+		<mapper resource="sqlmapper/TMigrationsMapper.xml" />
+		<mapper resource="sqlmapper/TNotesMapper.xml" /> 
+		<mapper resource="sqlmapper/TPaymentMapper.xml" />
+		<mapper resource="sqlmapper/TPaypalMapper.xml" /> 
+		<mapper resource="sqlmapper/TProductsMapper.xml" />
+		<mapper resource="sqlmapper/TQuotesMapper.xml" /> 
+		<mapper resource="sqlmapper/TQuoteItemsMapper.xml" />
+		<mapper resource="sqlmapper/TSaleItemsMapper.xml" /> 
+		<mapper resource="sqlmapper/TSalesMapper.xml" />
+		<mapper resource="sqlmapper/TSessionsMapper.xml" /> 
+		<mapper resource="sqlmapper/TSettingsMapper.xml" />
+		<mapper resource="sqlmapper/TSkrillMapper.xml" /> 
+		<mapper resource="sqlmapper/TStripeMapper.xml" />
+		<mapper resource="sqlmapper/TTaxRatesMapper.xml" /> 
+		<mapper resource="sqlmapper/TUsersMapper.xml" />
+		<mapper resource="sqlmapper/TUsersGroupsMapper.xml" /> 
 		<!-- <mapper class="com.enjoylearning.mybatis.mapper.TJobHistoryAnnoMapper"/> -->
 	</mappers>
 

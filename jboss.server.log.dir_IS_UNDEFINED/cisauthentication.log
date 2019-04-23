@@ -1,7 +1,7 @@
 2019-03-30 09:04:26,007 DEBUG [restartedMain] o.s.b.c.l.ClasspathLoggingApplicationListener - Application started with classpath: [file:/C:/shanfeng/study/gitProjects/GionDiningCMSService/target/classes/]
-2019-03-30 09:04:26,105 INFO  [restartedMain] com.gion.cms.GionDiningCmsApplication - Starting GionDiningCmsApplication on DESKTOP-VCGT1ET with PID 21276 (C:\shanfeng\study\gitProjects\GionDiningCMSService\target\classes started by feng in C:\shanfeng\study\gitProjects\GionDiningCMSService)
-2019-03-30 09:04:26,107 INFO  [restartedMain] com.gion.cms.GionDiningCmsApplication - No active profile set, falling back to default profiles: default
-2019-03-30 09:04:26,107 DEBUG [restartedMain] org.springframework.boot.SpringApplication - Loading source class com.gion.cms.GionDiningCmsApplication
+2019-03-30 09:04:26,105 INFO  [restartedMain] com.lim.cms.GionDiningCmsApplication - Starting GionDiningCmsApplication on DESKTOP-VCGT1ET with PID 21276 (C:\shanfeng\study\gitProjects\GionDiningCMSService\target\classes started by feng in C:\shanfeng\study\gitProjects\GionDiningCMSService)
+2019-03-30 09:04:26,107 INFO  [restartedMain] com.lim.cms.GionDiningCmsApplication - No active profile set, falling back to default profiles: default
+2019-03-30 09:04:26,107 DEBUG [restartedMain] org.springframework.boot.SpringApplication - Loading source class com.lim.cms.GionDiningCmsApplication
 2019-03-30 09:04:26,178 DEBUG [restartedMain] o.s.b.context.config.ConfigFileApplicationListener - Loaded config file 'file:/C:/shanfeng/study/gitProjects/GionDiningCMSService/target/classes/application.properties' (classpath:/application.properties)
 2019-03-30 09:04:26,180 DEBUG [restartedMain] o.s.boot.devtools.restart.ChangeableUrls - Matching URLs for reloading : [file:/C:/shanfeng/study/gitProjects/GionDiningCMSService/target/classes/]
 2019-03-30 09:04:26,180 DEBUG [restartedMain] o.s.boot.devtools.settings.DevToolsSettings - Included patterns for restart : []
@@ -930,11 +930,11 @@ Unconditional classes:
 
 2019-03-30 09:04:29,388 INFO  [restartedMain] org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
 2019-03-30 09:04:29,424 INFO  [restartedMain] o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
-2019-03-30 09:04:29,429 INFO  [restartedMain] com.gion.cms.GionDiningCmsApplication - Started GionDiningCmsApplication in 4.079 seconds (JVM running for 5.369)
+2019-03-30 09:04:29,429 INFO  [restartedMain] com.lim.cms.GionDiningCmsApplication - Started GionDiningCmsApplication in 4.079 seconds (JVM running for 5.369)
 2019-03-30 09:04:29,432 DEBUG [restartedMain] o.springframework.boot.devtools.restart.Restarter - Creating new Restarter for thread Thread[main,5,main]
 2019-03-30 09:04:29,433 DEBUG [restartedMain] o.springframework.boot.devtools.restart.Restarter - Immediately restarting application
 2019-03-30 09:04:29,433 DEBUG [restartedMain] o.springframework.boot.devtools.restart.Restarter - Created RestartClassLoader org.springframework.boot.devtools.restart.classloader.RestartClassLoader@128431e5
-2019-03-30 09:04:29,433 DEBUG [restartedMain] o.springframework.boot.devtools.restart.Restarter - Starting application com.gion.cms.GionDiningCmsApplication with URLs [file:/C:/shanfeng/study/gitProjects/GionDiningCMSService/target/classes/]
+2019-03-30 09:04:29,433 DEBUG [restartedMain] o.springframework.boot.devtools.restart.Restarter - Starting application com.lim.cms.GionDiningCmsApplication with URLs [file:/C:/shanfeng/study/gitProjects/GionDiningCMSService/target/classes/]
 2019-03-30 09:05:26,431 INFO  [RMI TCP Connection(2)-127.0.0.1] o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
 2019-03-30 09:05:26,431 DEBUG [RMI TCP Connection(2)-127.0.0.1] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@28dad745, started on Sat Mar 30 09:04:26 SGT 2019
 2019-03-30 09:05:26,442 INFO  [RMI TCP Connection(2)-127.0.0.1] o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'

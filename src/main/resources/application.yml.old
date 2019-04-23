@@ -36,11 +36,11 @@ spring:
  
 mybatis:
   mapper-locations: classpath:sqlmapper/*.xml  #指定*Mapper.xml的位置
-  type-aliases-package: com.gion.cms.entity
+  type-aliases-package: com.lim.cms.entity
   
 mapper:
     mappers:
-        - com.gion.cms.mapper
+        - com.lim.cms.mapper
     not-empty: false
     identity: MYSQL
     
