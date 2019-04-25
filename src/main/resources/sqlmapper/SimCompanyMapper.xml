@@ -54,9 +54,9 @@
 <!--       #{city,jdbcType=VARCHAR}, #{state,jdbcType=VARCHAR}, #{postalCode,jdbcType=VARCHAR},  -->
 <!--       #{country,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR},  -->
 <!--       #{logo,jdbcType=VARCHAR}, #{ssImage,jdbcType=VARCHAR}, #{status,jdbcType=BIT}) -->
-	insert into sim_company
-	<trim prefix="where" prefixOverrides="and | or">
-		<if test="id != null">
+	insert into sim_company 
+	<trim prefix="(" suffix=")" suffixOverrides=",">
+	<if test="id != null">
 			id,
 		</if>
 		<if test="name != null">
@@ -113,6 +113,22 @@
 		<if test="status != null">
 			status,
 		</if>
+	</trim>
+	<trim prefix="values (" suffix=")" suffixOverrides=",">
+      #{id,jdbcType=INTEGER},
+      <if test="checkProject != null">
+        #{checkProject,jdbcType=VARCHAR},
+      </if>
+      <if test="detail != null">
+        #{detail,jdbcType=VARCHAR},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=INTEGER},
+      </if>
+    </trim>
+    
+	<trim prefix="where" prefixOverrides="and | or">
+		
 	</trim>
   </insert>
   <update id="updateByPrimaryKey" parameterType="com.lim.cms.entity.SimCompany">
