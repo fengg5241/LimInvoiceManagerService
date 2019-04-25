@@ -42,21 +42,10 @@
     <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
       SELECT LAST_INSERT_ID()
     </selectKey>
-<!--     insert into sim_company (id, name, company,  -->
-<!--       cf1, cf2, cf3, cf4,  -->
-<!--       cf5, cf6, address,  -->
-<!--       city, state, postal_code,  -->
-<!--       country, phone, email,  -->
-<!--       logo, ss_image, status) -->
-<!--     values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{company,jdbcType=VARCHAR},  -->
-<!--       #{cf1,jdbcType=VARCHAR}, #{cf2,jdbcType=VARCHAR}, #{cf3,jdbcType=VARCHAR}, #{cf4,jdbcType=VARCHAR},  -->
-<!--       #{cf5,jdbcType=VARCHAR}, #{cf6,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR},  -->
-<!--       #{city,jdbcType=VARCHAR}, #{state,jdbcType=VARCHAR}, #{postalCode,jdbcType=VARCHAR},  -->
-<!--       #{country,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR},  -->
-<!--       #{logo,jdbcType=VARCHAR}, #{ssImage,jdbcType=VARCHAR}, #{status,jdbcType=BIT}) -->
+
 	insert into sim_company 
 	<trim prefix="(" suffix=")" suffixOverrides=",">
-	<if test="id != null">
+		<if test="id != null">
 			id,
 		</if>
 		<if test="name != null">
@@ -115,21 +104,65 @@
 		</if>
 	</trim>
 	<trim prefix="values (" suffix=")" suffixOverrides=",">
-      #{id,jdbcType=INTEGER},
-      <if test="checkProject != null">
-        #{checkProject,jdbcType=VARCHAR},
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
       </if>
-      <if test="detail != null">
-        #{detail,jdbcType=VARCHAR},
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR}, 
       </if>
-      <if test="userId != null">
-        #{userId,jdbcType=INTEGER},
+      <if test="company != null">
+        #{company,jdbcType=VARCHAR}, 
+      </if>
+      <if test="cf1 != null">
+        #{cf1,jdbcType=VARCHAR},
+      </if>
+      <if test="cf2 != null">
+        #{cf2,jdbcType=VARCHAR},
+      </if>
+      <if test="cf3 != null">
+        #{cf3,jdbcType=VARCHAR},
+      </if>
+      <if test="cf4 != null">
+        #{cf4,jdbcType=VARCHAR},
+      </if>
+      <if test="cf5 != null">
+        #{cf5,jdbcType=VARCHAR},
+      </if>
+      <if test="cf6 != null">
+        #{cf6,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null">
+        #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="city != null">
+        #{city,jdbcType=VARCHAR},
+      </if>
+      <if test="state != null">
+        #{state,jdbcType=VARCHAR},
+      </if>
+      <if test="postalCode != null">
+        #{postalCode,jdbcType=VARCHAR},
+      </if>
+      <if test="country != null">
+        #{country,jdbcType=VARCHAR},
+      </if>
+      <if test="phone != null">
+        #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="email != null">
+        #{email,jdbcType=VARCHAR},
+      </if>
+      <if test="logo != null">
+        #{logo,jdbcType=VARCHAR},
+      </if>
+      <if test="ssImage != null">
+        #{ssImage,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=VARCHAR},
       </if>
     </trim>
     
-	<trim prefix="where" prefixOverrides="and | or">
-		
-	</trim>
   </insert>
   <update id="updateByPrimaryKey" parameterType="com.lim.cms.entity.SimCompany">
     <!--
