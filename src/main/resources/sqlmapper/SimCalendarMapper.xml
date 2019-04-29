@@ -41,7 +41,7 @@
     <if test="title != null">
       title,
     </if>
-    <if test="user_id != null">
+    <if test="userId != null">
       user_id,
     </if>
     <if test="end != null">
