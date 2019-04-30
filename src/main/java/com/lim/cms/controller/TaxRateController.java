@@ -10,32 +10,33 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.lim.cms.entity.SimCompany;
-import com.lim.cms.service.CompanyService;
+import com.lim.cms.entity.SimTaxRates;
+import com.lim.cms.service.TaxRateService;
 
 @RestController
-@RequestMapping("/api/company")
-public class CompanyController {
+@RequestMapping("/api/taxRate")
+public class TaxRateController {
 
 	@Autowired
-	private CompanyService companyService;
+	private TaxRateService taxRateService;
 	
 	@RequestMapping(value = "/selectAll", produces = "application/json")
-	public List<SimCompany> selectAll() {
-		return companyService.selectAll();
+	public List<SimTaxRates> selectAll() {
+		return taxRateService.selectAll();
 	}
 	
 	@RequestMapping(value = "/selectById/{id}", produces = "application/json")
-	public SimCompany selectById(@PathVariable int id) {
-		return companyService.selectByPrimaryKey(id);
+	public SimTaxRates selectById(@PathVariable int id) {
+		return taxRateService.selectByPrimaryKey(id);
 	}
 	
 	@PostMapping("/insert")
-	public void insert(@RequestBody SimCompany record) {
-		companyService.insert(record);
+	public void insert(@RequestBody SimTaxRates record) {
+		taxRateService.insert(record);
 	}
 	
 	@PostMapping("/update")
-	public void update(@RequestBody SimCompany record) {
-		companyService.update(record);
+	public void update(@RequestBody SimTaxRates record) {
+		taxRateService.update(record);
 	}
 }

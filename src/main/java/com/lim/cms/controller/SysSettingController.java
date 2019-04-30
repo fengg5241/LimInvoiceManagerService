@@ -13,7 +13,7 @@ import com.lim.cms.entity.SimSettings;
 import com.lim.cms.service.SysSettingService;
 
 @RestController
-@RequestMapping("/sysSetting")
+@RequestMapping("/api/sysSetting")
 public class SysSettingController {
 	@Autowired
 	private SysSettingService sysSettingService;
