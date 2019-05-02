@@ -36,4 +36,9 @@ public class TaxRateServiceImpl implements TaxRateService {
 		return taxRatesMapper.updateByPrimaryKey(record);
 	}
 
+	@Override
+	public int delete(Integer id) {
+		return taxRatesMapper.deleteByPrimaryKey(id);
+	}
+
 }

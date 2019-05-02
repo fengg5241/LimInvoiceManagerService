@@ -39,4 +39,9 @@ public class TaxRateController {
 	public void update(@RequestBody SimTaxRates record) {
 		taxRateService.update(record);
 	}
+	
+	@RequestMapping(value = "/delete/{id}", produces = "application/json")
+	public void delete(@PathVariable int id) {
+		taxRateService.delete(id);
+	}
 }

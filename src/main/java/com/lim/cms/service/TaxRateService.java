@@ -13,4 +13,6 @@ public interface TaxRateService {
     List<SimTaxRates> selectAll();
 
     int update(SimTaxRates record);
+    
+    int delete(Integer id);
 }
