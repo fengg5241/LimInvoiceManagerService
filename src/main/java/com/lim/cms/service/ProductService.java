@@ -13,4 +13,6 @@ public interface ProductService {
     List<SimProducts> selectAll();
 
     int update(SimProducts record);
+    
+    int delete(Integer id);
 }

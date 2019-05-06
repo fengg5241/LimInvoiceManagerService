@@ -46,7 +46,7 @@
     <if test="details != null">
       details,
     </if>
-    <if test="tax_method != null">
+    <if test="taxMethod != null">
       tax_method,
     </if>
     
@@ -115,5 +115,6 @@
     -->
     select id, name, price, tax_rate, details, tax_method
     from sim_products
+    order by id
   </select>
 </mapper>

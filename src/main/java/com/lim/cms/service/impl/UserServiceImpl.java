@@ -36,4 +36,9 @@ public class UserServiceImpl implements UserService {
 		return userMapper.updateByPrimaryKey(record);
 	}
 
+	@Override
+	public int delete(Integer id) {
+		return userMapper.deleteByPrimaryKey(id);
+	}
+
 }

@@ -36,4 +36,9 @@ public class ProductServiceImpl implements ProductService {
 		return simProductsMapper.updateByPrimaryKey(record);
 	}
 
+	@Override
+	public int delete(Integer id) {
+		return simProductsMapper.deleteByPrimaryKey(id);
+	}
+
 }

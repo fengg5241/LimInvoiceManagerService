@@ -13,4 +13,6 @@ public interface UserService {
     List<SimUsers> selectAll();
 
     int update(SimUsers record);
+    
+    int delete(Integer id);
 }
