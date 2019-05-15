@@ -2,9 +2,12 @@ package com.lim.cms.service.impl;
 
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import com.lim.cms.entity.SimStripe;
 import com.lim.cms.service.StripeService;
 
+@Service
 public class StripeServiceImpl implements StripeService {
 
 	@Override

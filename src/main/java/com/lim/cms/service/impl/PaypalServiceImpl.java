@@ -4,10 +4,12 @@ import java.util.List;
 
 import javax.annotation.Resource;
 
+import org.springframework.stereotype.Service;
+
 import com.lim.cms.entity.SimPaypal;
 import com.lim.cms.mapper.SimPaypalMapper;
 import com.lim.cms.service.PaypalService;
-
+@Service
 public class PaypalServiceImpl implements PaypalService {
 
 	@Resource

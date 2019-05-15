@@ -4,10 +4,13 @@ import java.util.List;
 
 import javax.annotation.Resource;
 
+import org.springframework.stereotype.Service;
+
 import com.lim.cms.entity.SimSkrill;
 import com.lim.cms.mapper.SimSkrillMapper;
 import com.lim.cms.service.SkrillService;
 
+@Service
 public class SkrillServiceImpl implements SkrillService {
 
 	@Resource
