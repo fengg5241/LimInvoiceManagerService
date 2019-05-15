@@ -190,9 +190,6 @@
     </if>
     </trim>
   </insert>
-  
-
-  </insert>
   <update id="updateByPrimaryKey" parameterType="com.lim.cms.entity.SimQuotes">
     <!--
       WARNING - @mbg.generated
