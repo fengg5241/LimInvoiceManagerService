@@ -74,7 +74,7 @@
         #{description,jdbcType=VARCHAR}, 
       </if>
       <if test="color != null">
-        #{color,jdbcType=VARCHAR})
+        #{color,jdbcType=VARCHAR}
       </if>
     </trim>
   </insert>
