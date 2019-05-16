@@ -186,7 +186,7 @@
       #{orderTax,jdbcType=DECIMAL}, 
     </if>
     <if test="companyName != null">
-      #{companyName,jdbcType=VARCHAR})
+      #{companyName,jdbcType=VARCHAR}
     </if>
     </trim>
   </insert>
