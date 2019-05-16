@@ -81,7 +81,7 @@
         #{user,jdbcType=VARCHAR},
       </if>
        <if test="transactionId != null">
-        #{transactionId,jdbcType=VARCHAR})
+        #{transactionId,jdbcType=VARCHAR}
       </if>
     </trim>
 
