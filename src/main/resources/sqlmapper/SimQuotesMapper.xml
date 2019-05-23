@@ -21,7 +21,7 @@
     <result column="order_discount_id" jdbcType="VARCHAR" property="orderDiscountId" />
     <result column="total_discount" jdbcType="DECIMAL" property="totalDiscount" />
     <result column="company_id" jdbcType="INTEGER" property="companyId" />
-    <result column="expiry_date" jdbcType="DATE" property="expiryDate" />
+    <result column="expiry_date" jdbcType="TIMESTAMP" property="expiryDate" />
     <result column="status" jdbcType="VARCHAR" property="status" />
     <result column="product_discount" jdbcType="DECIMAL" property="productDiscount" />
     <result column="order_discount" jdbcType="DECIMAL" property="orderDiscount" />
@@ -165,7 +165,7 @@
       #{companyId,jdbcType=INTEGER}, 
     </if>
     <if test="expiryDate != null">
-      #{expiryDate,jdbcType=DATE}, 
+      #{expiryDate,jdbcType=TIMESTAMP}, 
     </if>
     <if test="status != null">
       #{status,jdbcType=VARCHAR}, 
@@ -198,7 +198,7 @@
     update sim_quotes
     <set>
       <if test="referenceNo != null">
-        reference_no = #{referenceNo,jdbcType=VARCHAR}
+        reference_no = #{referenceNo,jdbcType=VARCHAR},
       </if>
       <if test="customerId != null">
         customer_id = #{customerId,jdbcType=INTEGER},
@@ -240,7 +240,7 @@
         company_id = #{companyId,jdbcType=INTEGER},
       </if>
       <if test="expiryDate != null">
-        expiry_date = #{expiryDate,jdbcType=DATE},
+        expiry_date = #{expiryDate,jdbcType=TIMESTAMP},
       </if>
       <if test="status != null">
         status = #{status,jdbcType=VARCHAR},
