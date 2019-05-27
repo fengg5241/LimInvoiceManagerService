@@ -46,4 +46,14 @@ public class QuoteItemServiceImpl implements QuoteItemService {
 		return simQuoteItemsMapper.selectAllByQuoteId(id);
 	}
 
+	@Override
+	public int bulkInsert(List<SimQuoteItems> record) {
+		return simQuoteItemsMapper.bulkInsert(record);
+	}
+
+	@Override
+	public int bulkUpdate(List<SimQuoteItems> record) {
+		return simQuoteItemsMapper.bulkUpdate(record);
+	}
+
 }

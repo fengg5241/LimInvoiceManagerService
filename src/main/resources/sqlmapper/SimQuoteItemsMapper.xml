@@ -131,6 +131,107 @@
       </if>
     </trim>
   </insert>
+  
+  <insert id="bulkInsert" parameterType="java.util.List">
+    <foreach collection="record" item="bean" index="index" open="" close="" separator=";">
+<!--     <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer"> -->
+<!--       SELECT LAST_INSERT_ID() -->
+<!--     </selectKey> -->
+    insert into sim_quote_items 
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+    <if test="id != null">
+      id,
+    </if>
+    <if test="quoteId != null">
+      quote_id,
+    </if>
+    <if test="productName != null">
+      product_name,
+    </if>
+    <if test="taxRateId != null">
+      tax_rate_id,
+    </if>
+    <if test="tax != null">
+      tax,
+    </if>
+    <if test="quantity != null">
+      quantity,
+    </if>
+    <if test="unitPrice != null">
+      unit_price,
+    </if>
+    <if test="subtotal != null">
+      subtotal,
+    </if>
+    <if test="taxAmt != null">
+      tax_amt,
+    </if>
+    <if test="details != null">
+      details,
+    </if>
+    <if test="netUnitPrice != null">
+      net_unit_price,
+    </if>
+    <if test="discount != null">
+      discount,
+    </if>
+    <if test="discountAmt != null">
+      discount_amt,
+    </if>
+    <if test="tax_method != null">
+      taxMethod,
+    </if>
+  </trim>
+  <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="quoteId != null">
+        #{quoteId,jdbcType=INTEGER}, 
+      </if>
+      <if test="productName != null">
+        #{productName,jdbcType=VARCHAR}, 
+      </if>
+      <if test="taxRateId != null">
+        #{taxRateId,jdbcType=INTEGER}, 
+      </if>
+      <if test="tax != null">
+        #{tax,jdbcType=VARCHAR}, 
+      </if>
+      <if test="quantity != null">
+        #{quantity,jdbcType=DECIMAL}, 
+      </if>
+      <if test="unitPrice != null">
+       	#{unitPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="subtotal != null">
+        #{subtotal,jdbcType=DECIMAL}, 
+      </if>
+      <if test="taxAmt != null">
+        #{taxAmt,jdbcType=DECIMAL},  
+      </if>
+      <if test="details != null">
+        #{details,jdbcType=VARCHAR}, 
+      </if>
+      <if test="netUnitPrice != null">
+        #{netUnitPrice,jdbcType=DECIMAL}, 
+      </if>
+      <if test="realUnitPrice != null">
+        #{realUnitPrice,jdbcType=DECIMAL},
+      </if>
+      <if test="discount != null">
+        #{discount,jdbcType=VARCHAR}, 
+      </if>
+      <if test="discountAmt != null">
+        #{discountAmt,jdbcType=DECIMAL}, 
+      </if>
+      <if test="taxMethod != null">
+        #{taxMethod,jdbcType=VARCHAR}
+      </if>
+    </trim>
+    </foreach>
+  </insert>
+  
   <update id="updateByPrimaryKey" parameterType="com.lim.cms.entity.SimQuoteItems">
     <!--
       WARNING - @mbg.generated
@@ -182,6 +283,56 @@
     </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="bulkUpdate" parameterType="java.util.List">
+    <foreach collection="record" item="bean" index="index" open="" close="" separator=";">
+    update sim_quote_items
+    <set>
+      <if test="bean.quoteId != null">
+      quote_id = #{bean.quoteId,jdbcType=INTEGER},
+    </if>
+    <if test="bean.productName != null">
+      product_name = #{bean.productName,jdbcType=VARCHAR},
+    </if>
+    <if test="bean.taxRateId != null">
+      tax_rate_id = #{bean.taxRateId,jdbcType=INTEGER},
+    </if>
+    <if test="bean.tax != null">
+      tax = #{bean.tax,jdbcType=VARCHAR},
+    </if>
+    <if test="bean.quantity != null">
+      quantity = #{bean.quantity,jdbcType=DECIMAL},
+    </if>
+    <if test="bean.unitPrice != null">
+      unit_price = #{bean.unitPrice,jdbcType=DECIMAL},
+    </if>
+    <if test="bean.subtotal != null">
+      subtotal = #{bean.subtotal,jdbcType=DECIMAL},
+    </if>
+    <if test="bean.taxAmt != null">
+      tax_amt = #{bean.taxAmt,jdbcType=DECIMAL},
+    </if>
+    <if test="bean.details != null">
+      details = #{bean.details,jdbcType=VARCHAR},
+    </if>
+    <if test="bean.netUnitPrice != null">
+      net_unit_price = #{bean.netUnitPrice,jdbcType=DECIMAL},
+    </if>
+    <if test="bean.realUnitPrice != null">
+      real_unit_price = #{bean.realUnitPrice,jdbcType=DECIMAL},
+    </if>
+    <if test="bean.discount != null">
+      discount = #{bean.discount,jdbcType=VARCHAR},
+    </if>
+    <if test="bean.discountAmt != null">
+      discount_amt = #{bean.discountAmt,jdbcType=DECIMAL},
+    </if>
+    <if test="bean.taxMethod != null">
+      tax_method = #{bean.taxMethod,jdbcType=VARCHAR}
+    </if>
+    </set>
+    where id = #{bean.id,jdbcType=INTEGER}
+    </foreach>
   </update>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     <!--

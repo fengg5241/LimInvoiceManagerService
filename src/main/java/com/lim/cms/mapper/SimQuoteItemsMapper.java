@@ -1,7 +1,10 @@
 package com.lim.cms.mapper;
 
-import com.lim.cms.entity.SimQuoteItems;
 import java.util.List;
+
+import org.apache.ibatis.annotations.Param;
+
+import com.lim.cms.entity.SimQuoteItems;
 
 public interface SimQuoteItemsMapper {
     /**
@@ -45,4 +48,8 @@ public interface SimQuoteItemsMapper {
      * @mbg.generated
      */
     int updateByPrimaryKey(SimQuoteItems record);
+    
+    int bulkInsert(List<SimQuoteItems> record);
+    
+    int bulkUpdate(@Param(value = "record") List<SimQuoteItems> record);
 }

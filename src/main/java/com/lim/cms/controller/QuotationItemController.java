@@ -45,6 +45,11 @@ public class QuotationItemController {
 		quoteItemService.update(record);
 	}
 	
+	@PostMapping("/bulkUpdate")
+	public void bulkUpdate(@RequestBody List<SimQuoteItems> record) {
+		quoteItemService.bulkUpdate(record);
+	}
+	
 	@RequestMapping(value = "/delete/{id}", produces = "application/json")
 	public int delete(@PathVariable int id) {
 		return quoteItemService.delete(id);
