@@ -56,4 +56,9 @@ public class QuoteItemServiceImpl implements QuoteItemService {
 		return simQuoteItemsMapper.bulkUpdate(record);
 	}
 
+	@Override
+	public int bulkDelete(List<SimQuoteItems> record) {
+		return simQuoteItemsMapper.bulkDelete(record);
+	}
+
 }

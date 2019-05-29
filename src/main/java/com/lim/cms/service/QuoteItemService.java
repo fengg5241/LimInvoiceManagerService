@@ -21,5 +21,7 @@ public interface QuoteItemService {
     int bulkInsert(List<SimQuoteItems> record);
     
     int bulkUpdate(List<SimQuoteItems> record);
+    
+    int bulkDelete(List<SimQuoteItems> record);
 
 }

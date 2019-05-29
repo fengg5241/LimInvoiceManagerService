@@ -1,5 +1,7 @@
 package com.lim.cms.controller;
 
+import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -47,7 +49,29 @@ public class QuotationItemController {
 	
 	@PostMapping("/bulkUpdate")
 	public void bulkUpdate(@RequestBody List<SimQuoteItems> record) {
-		quoteItemService.bulkUpdate(record);
+		List<SimQuoteItems> updateItems = new ArrayList<SimQuoteItems>();
+		List<SimQuoteItems> insertItems = new ArrayList<SimQuoteItems>();
+		List<SimQuoteItems> deleteItems = new ArrayList<SimQuoteItems>();
+		for (SimQuoteItems item : record) {
+			if(item.getQuantity() == BigDecimal.ZERO) {
+				deleteItems.add(item);
+			}else if(item.getId() != null ) {
+				updateItems.add(item);
+			}else {
+				insertItems.add(item);
+			}
+		}
+		
+		if(updateItems.size() > 0) {
+			quoteItemService.bulkUpdate(updateItems);
+		}
+		if(insertItems.size() > 0) {
+			quoteItemService.bulkInsert(insertItems);
+		}
+		if(deleteItems.size() > 0) {
+			quoteItemService.bulkDelete(deleteItems);
+		}
+		
 	}
 	
 	@RequestMapping(value = "/delete/{id}", produces = "application/json")

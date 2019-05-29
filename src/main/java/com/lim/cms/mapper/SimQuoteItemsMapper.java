@@ -49,7 +49,9 @@ public interface SimQuoteItemsMapper {
      */
     int updateByPrimaryKey(SimQuoteItems record);
     
-    int bulkInsert(List<SimQuoteItems> record);
+    int bulkInsert(@Param(value = "record") List<SimQuoteItems> record);
     
     int bulkUpdate(@Param(value = "record") List<SimQuoteItems> record);
+    
+    int bulkDelete(@Param(value = "record") List<SimQuoteItems> record);
 }

@@ -30,6 +30,14 @@
     delete from sim_quote_items
     where id = #{id,jdbcType=INTEGER}
   </delete>
+  
+  <delete id="bulkDelete" parameterType="java.util.List">
+    <foreach collection="record" item="bean" index="index" open="" close="" separator=";">
+    delete from sim_quote_items
+    where id = #{bean.id,jdbcType=INTEGER}
+    </foreach>
+  </delete>
+  
   <insert id="insert" parameterType="com.lim.cms.entity.SimQuoteItems">
     <!--
       WARNING - @mbg.generated
@@ -139,94 +147,94 @@
 <!--     </selectKey> -->
     insert into sim_quote_items 
     <trim prefix="(" suffix=")" suffixOverrides=",">
-    <if test="id != null">
+    <if test="bean.id != null">
       id,
     </if>
-    <if test="quoteId != null">
+    <if test="bean.quoteId != null">
       quote_id,
     </if>
-    <if test="productName != null">
+    <if test="bean.productName != null">
       product_name,
     </if>
-    <if test="taxRateId != null">
+    <if test="bean.taxRateId != null">
       tax_rate_id,
     </if>
-    <if test="tax != null">
+    <if test="bean.tax != null">
       tax,
     </if>
-    <if test="quantity != null">
+    <if test="bean.quantity != null">
       quantity,
     </if>
-    <if test="unitPrice != null">
+    <if test="bean.unitPrice != null">
       unit_price,
     </if>
-    <if test="subtotal != null">
+    <if test="bean.subtotal != null">
       subtotal,
     </if>
-    <if test="taxAmt != null">
+    <if test="bean.taxAmt != null">
       tax_amt,
     </if>
-    <if test="details != null">
+    <if test="bean.details != null">
       details,
     </if>
-    <if test="netUnitPrice != null">
+    <if test="bean.netUnitPrice != null">
       net_unit_price,
     </if>
-    <if test="discount != null">
+    <if test="bean.discount != null">
       discount,
     </if>
-    <if test="discountAmt != null">
+    <if test="bean.discountAmt != null">
       discount_amt,
     </if>
-    <if test="tax_method != null">
-      taxMethod,
+    <if test="bean.taxMethod != null">
+      tax_method,
     </if>
   </trim>
   <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="id != null">
-        #{id,jdbcType=INTEGER},
+      <if test="bean.id != null">
+        #{bean.id,jdbcType=INTEGER},
       </if>
-      <if test="quoteId != null">
-        #{quoteId,jdbcType=INTEGER}, 
+      <if test="bean.quoteId != null">
+        #{bean.quoteId,jdbcType=INTEGER}, 
       </if>
-      <if test="productName != null">
-        #{productName,jdbcType=VARCHAR}, 
+      <if test="bean.productName != null">
+        #{bean.productName,jdbcType=VARCHAR}, 
       </if>
-      <if test="taxRateId != null">
-        #{taxRateId,jdbcType=INTEGER}, 
+      <if test="bean.taxRateId != null">
+        #{bean.taxRateId,jdbcType=INTEGER}, 
       </if>
-      <if test="tax != null">
-        #{tax,jdbcType=VARCHAR}, 
+      <if test="bean.tax != null">
+        #{bean.tax,jdbcType=VARCHAR}, 
       </if>
-      <if test="quantity != null">
-        #{quantity,jdbcType=DECIMAL}, 
+      <if test="bean.quantity != null">
+        #{bean.quantity,jdbcType=DECIMAL}, 
       </if>
-      <if test="unitPrice != null">
-       	#{unitPrice,jdbcType=DECIMAL},
+      <if test="bean.unitPrice != null">
+       	#{bean.unitPrice,jdbcType=DECIMAL},
       </if>
-      <if test="subtotal != null">
-        #{subtotal,jdbcType=DECIMAL}, 
+      <if test="bean.subtotal != null">
+        #{bean.subtotal,jdbcType=DECIMAL}, 
       </if>
-      <if test="taxAmt != null">
-        #{taxAmt,jdbcType=DECIMAL},  
+      <if test="bean.taxAmt != null">
+        #{bean.taxAmt,jdbcType=DECIMAL},  
       </if>
-      <if test="details != null">
-        #{details,jdbcType=VARCHAR}, 
+      <if test="bean.details != null">
+        #{bean.details,jdbcType=VARCHAR}, 
       </if>
-      <if test="netUnitPrice != null">
-        #{netUnitPrice,jdbcType=DECIMAL}, 
+      <if test="bean.netUnitPrice != null">
+        #{bean.netUnitPrice,jdbcType=DECIMAL}, 
       </if>
-      <if test="realUnitPrice != null">
-        #{realUnitPrice,jdbcType=DECIMAL},
+      <if test="bean.realUnitPrice != null">
+        #{bean.realUnitPrice,jdbcType=DECIMAL},
       </if>
-      <if test="discount != null">
-        #{discount,jdbcType=VARCHAR}, 
+      <if test="bean.discount != null">
+        #{bean.discount,jdbcType=VARCHAR}, 
       </if>
-      <if test="discountAmt != null">
-        #{discountAmt,jdbcType=DECIMAL}, 
+      <if test="bean.discountAmt != null">
+        #{bean.discountAmt,jdbcType=DECIMAL}, 
       </if>
-      <if test="taxMethod != null">
-        #{taxMethod,jdbcType=VARCHAR}
+      <if test="bean.taxMethod != null">
+        #{bean.taxMethod,jdbcType=VARCHAR}
       </if>
     </trim>
     </foreach>
