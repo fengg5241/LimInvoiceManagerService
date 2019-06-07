@@ -180,6 +180,9 @@
     <if test="bean.netUnitPrice != null">
       net_unit_price,
     </if>
+    <if test="bean.realUnitPrice != null">
+       real_unit_price,
+      </if>
     <if test="bean.discount != null">
       discount,
     </if>
@@ -369,6 +372,6 @@
     select id, quote_id, product_name, tax_rate_id, tax, quantity, unit_price, subtotal, 
     tax_amt, details, net_unit_price, real_unit_price, discount, discount_amt, tax_method
     from sim_quote_items
-    where quote_id = #{id,jdbcType=INTEGER}
+    where quote_id = #{id,jdbcType=INTEGER} and quantity > 0
   </select>
 </mapper>
