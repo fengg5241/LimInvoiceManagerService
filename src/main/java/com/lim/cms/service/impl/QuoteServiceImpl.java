@@ -18,7 +18,8 @@ public class QuoteServiceImpl implements QuoteService {
 	
 	@Override
 	public int insert(SimQuotes record) {
-		return simQuotesMapper.insert(record);
+		simQuotesMapper.insert(record);
+		return record.getId();
 	}
 
 	@Override

@@ -18,7 +18,8 @@ public class CustomerServiceImpl implements CustomerService {
 	
 	@Override
 	public int insert(SimCustomers record) {
-		return customerMapper.insert(record);
+		customerMapper.insert(record);
+		return record.getId();
 	}
 
 	@Override

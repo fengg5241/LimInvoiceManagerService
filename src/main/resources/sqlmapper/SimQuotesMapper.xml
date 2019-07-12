@@ -174,7 +174,7 @@
       #{productDiscount,jdbcType=DECIMAL},
     </if>
     <if test="orderDiscount != null">
-      #{orderDiscount,jdbcType=DECIMAL}, ,
+      #{orderDiscount,jdbcType=DECIMAL},
     </if>
     <if test="productTax != null">
       #{productTax,jdbcType=DECIMAL}, 

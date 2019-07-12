@@ -30,8 +30,9 @@ public class QuotationController {
 	}
 	
 	@PostMapping("/insert")
-	public void insert(@RequestBody SimQuotes record) {
-		quoteService.insert(record);
+	public int insert(@RequestBody SimQuotes record) {
+		int newQuoteId = quoteService.insert(record);
+		return newQuoteId;
 	}
 	
 	@PostMapping("/update")

@@ -30,8 +30,8 @@ public class CustomerController {
 	}
 	
 	@PostMapping("/insert")
-	public void insert(@RequestBody SimCustomers record) {
-		customerService.insert(record);
+	public int insert(@RequestBody SimCustomers record) {
+		return customerService.insert(record);
 	}
 	
 	@PostMapping("/update")
