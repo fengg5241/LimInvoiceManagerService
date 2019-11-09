@@ -13,4 +13,6 @@ public interface CustomerService {
     List<SimCustomers> selectAll();
 
     int update(SimCustomers record);
+    
+    int delete(Integer id);
 }

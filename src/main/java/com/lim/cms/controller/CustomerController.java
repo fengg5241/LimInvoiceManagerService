@@ -38,4 +38,9 @@ public class CustomerController {
 	public void update(@RequestBody SimCustomers record) {
 		customerService.update(record);
 	}
+	
+	@RequestMapping(value = "/delete/{id}", produces = "application/json")
+	public int delete(@PathVariable int id) {
+		return customerService.delete(id);
+	}
 }

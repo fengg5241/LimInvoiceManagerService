@@ -1,7 +1,9 @@
 package com.lim.cms.mapper;
 
-import com.lim.cms.entity.SimSales;
 import java.util.List;
+
+import com.lim.cms.entity.SimSales;
+import com.lim.cms.entity.SimSalesReportCriteria;
 
 public interface SimSalesMapper {
     /**
@@ -43,4 +45,7 @@ public interface SimSalesMapper {
      * @mbg.generated
      */
     int updateByPrimaryKey(SimSales record);
+    
+    
+    List<SimSales> selectAllByCondition(SimSalesReportCriteria criteria);
 }

@@ -58,7 +58,7 @@
         #{active,jdbcType=TINYINT},  
       </if>
       <if test="customerId != null">
-        #{customerId,jdbcType=INTEGER}
+        #{customerId,jdbcType=INTEGER},
       </if>
       <if test="accountEmail != null">
         #{accountEmail,jdbcType=VARCHAR}, 

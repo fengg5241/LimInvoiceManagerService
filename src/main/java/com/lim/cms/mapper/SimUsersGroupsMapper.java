@@ -43,4 +43,6 @@ public interface SimUsersGroupsMapper {
      * @mbg.generated
      */
     int updateByPrimaryKey(SimUsersGroups record);
+    
+    int updateByUserId(SimUsersGroups record);
 }

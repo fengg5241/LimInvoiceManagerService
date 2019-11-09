@@ -24,10 +24,21 @@ public class UserController {
 		return userService.selectAll();
 	}
 	
+	@RequestMapping(value = "/selectAllByCustomerId/{id}", produces = "application/json")
+	public List<SimUsers> selectAllByCustomerId(@PathVariable int id) {
+		return userService.selectAllByCustomerId(id);
+	}
+	
 	@RequestMapping(value = "/selectById/{id}", produces = "application/json")
 	public SimUsers selectById(@PathVariable int id) {
 		return userService.selectByPrimaryKey(id);
 	}
+	
+	@PostMapping(value = "/loginAuth", produces = "application/json")
+	public SimUsers loginAuth(@RequestBody SimUsers record) {
+		return userService.loginAuth(record);
+	}
+	
 	
 	@PostMapping("/insert")
 	public void insert(@RequestBody SimUsers record) {
@@ -39,8 +50,18 @@ public class UserController {
 		userService.update(record);
 	}
 	
+	@PostMapping("/changePassword")
+	public void changePassword(@RequestBody SimUsers record) {
+		userService.changePassword(record);
+	}
+	
 	@RequestMapping(value = "/delete/{id}", produces = "application/json")
 	public int delete(@PathVariable int id) {
 		return userService.delete(id);
+	}
+	
+	@RequestMapping(value = "/getUserByEmail/{email}", produces = "application/json")
+	public SimUsers getUserByEmail(@PathVariable String email) {
+		return userService.getUserByEmail(email);
 	}
 }

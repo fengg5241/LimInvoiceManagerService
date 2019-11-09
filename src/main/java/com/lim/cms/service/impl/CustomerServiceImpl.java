@@ -37,4 +37,11 @@ public class CustomerServiceImpl implements CustomerService {
 		return customerMapper.updateByPrimaryKey(record);
 	}
 
+	@Override
+	public int delete(Integer id) {
+		return customerMapper.deleteByPrimaryKey(id);
+	}
+
+
+
 }
